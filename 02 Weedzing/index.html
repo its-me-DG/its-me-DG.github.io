@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="it">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Includi WaveSurfer.js -->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+
+
+
+
+
+<body>
+
+  <div class="bg-mattoni"></div>
+
+  <div class="contenuto">
+    <img src="logo.webp" alt="Logo" class="logo" />
+    <img src="carta.webp" alt="Carta" class="carta" />
+    
+    <div class="audio-section">
+      <div id="waveform" role="region" aria-label="Forma d’onda audio"></div>
+      <div class="audio-btns">
+        <button id="playPauseBtn" class="big-booking-btn" aria-label="Play/Pausa audio">
+          ▶️ Play
+        </button>
+        <a href="https://www.beatstars.com/tuo-beat" target="_blank" class="big-booking-btn beatstars-btn">
+          Acquista su BeatStars
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="download-section">
+      <h2>Free Download</h2>
+      <p>Inserisci il codice che trovi in basso sulla carta per sbloccare il download:</p>
+      <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+        <input id="codiceBeat" type="text" placeholder="Inserisci codice" maxlength="12" autocomplete="off">
+        <button id="verificaCodiceBtn">Sblocca</button>
+      </div>
+      <div id="codiceFeedback" style="color: #e74c3c; min-height: 22px; margin-bottom: 10px;"></div>
+      <a id="downloadBeatBtn" href="https://www.beatstars.com/tuo-beat" target="_blank" style="display:none; padding: 12px 32px; border-radius: 12px; background: var(--colore3); color: var(--coloretext2); font-weight: bold; text-decoration: none;">Scarica il beat</a>
+    </div>
+
+    <div class="info-section">
+      <h2>Nota bene</h2>
+      <p class="download-disclaimer">
+        Anche se non sempre te lo dicono esplicitamente, tutti i beat in free download che trovi su internet posso essere usati per registrare e fare prove, ma non possono essere pubblicati o impongono molte limitazioni al numero di stream che puoi raggiungere.<br>
+        Per pubblicare o monetizzare serve comprare una licenza (base a 34.95€)
+        <span class="highlight-offerta">Se registri da me te la regalo!</span>
+      </p>
+    </div>
+
+    <div class="booking-section">
+      <h2>Clicca per prenotare una sessione</h2>
+      <a href="https://wa.me/393468128888?text=Ciao,%20voglio%20prenotare%20una%20sessione%20in%20studio!"
+        target="_blank" class="big-booking-btn">
+        Prenota
+      </a>
+    </div>
+
+    <div class="cards-section">
+      <h2>Scopri le altre carte</h2>
+      <div class="cards-grid">
+        <div class="card-item" data-url="landing-card01.html">
+          <img src="img/card01.webp" alt="Card 01">
+        </div>
+        <div class="card-item" data-url="landing-card02.html">
+          <img src="img/card03.webp" alt="Card 02">
+        </div>
+        <div class="card-item" data-url="landing-card03.html">
+          <img src="img/card04.webp" alt="Card 03">
+        </div>
+        <div class="card-item" data-url="landing-card04.html">
+          <img src="img/card05.webp" alt="Card 04">
+        </div>
+        <div class="card-item" data-url="landing-card05.html">
+          <img src="img/card06.webp" alt="Card 05">
+        </div>
+        <div class="card-item" data-url="landing-card06.html">
+          <img src="img/card07.webp" alt="Card 06">
+        </div>
+        <div class="card-item" data-url="landing-card07.html">
+          <img src="img/card08.webp" alt="Card 07">
+        </div>
+        <div class="card-item" data-url="landing-card08.html">
+          <img src="img/card09.webp" alt="Card 08">
+        </div>
+        <div class="card-item" data-url="landing-card09.html">
+          <img src="img/card10.webp" alt="Card 09">
+        </div>
+      </div>
+    </div>
+
+  <div class="studio-section">
+    <h2>Clicca qui per vedere lo studio</h2>
+    <a href="pagina-studio.html" class="big-booking-btn">
+      Scopri
+    </a>
+  </div>
+ 
+
+  
+
+
+
+
+  <script>
+
+    const wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: '#FFF',
+      progressColor: '#888',
+      height: 70,
+      normalize: true,
+      responsive: true,
+    });
+
+    wavesurfer.load('beat.mp3');
+
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    playPauseBtn.classList.add('paused');
+    playPauseBtn.textContent = 'Play';
+
+    playPauseBtn.addEventListener('click', () => {
+      wavesurfer.playPause();
+      const isPlaying = wavesurfer.isPlaying();
+      playPauseBtn.textContent = isPlaying ? 'Pause' : 'Play';
+      playPauseBtn.classList.toggle('playing', isPlaying);
+      playPauseBtn.classList.toggle('paused', !isPlaying);
+    });
+
+    wavesurfer.on('finish', () => {
+      playPauseBtn.textContent = 'Play';
+      playPauseBtn.classList.remove('playing');
+      playPauseBtn.classList.add('paused');
+    });
+
+    const waveform = document.getElementById('waveform');
+
+    let isDragging = false;
+
+    waveform.addEventListener('touchstart', (e) => {
+      isDragging = true;
+    });
+
+    waveform.addEventListener('touchmove', function(e) {
+      if (isDragging) {
+        e.preventDefault();
+        
+        const touch = e.touches[0];
+        const rect = waveform.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+
+        const percent = Math.max(0, Math.min(1, x / rect.width));
+        wavesurfer.seekTo(percent);
+      }
+    }, { passive: false }); // IMPORTANTE: passive:false per poter chiamare preventDefault
+
+    waveform.addEventListener('touchend', (e) => {
+      isDragging = false;
+    });
+
+  const codiceCorretto = "POKEMON35"; // Cambia col tuo vero codice!
+  const verificaBtn = document.getElementById('verificaCodiceBtn');
+  const codiceInput = document.getElementById('codiceBeat');
+  const feedback = document.getElementById('codiceFeedback');
+  const downloadBtn = document.getElementById('downloadBeatBtn');
+
+  verificaBtn.addEventListener('click', function() {
+    const inserito = codiceInput.value.trim();
+    if (inserito.toUpperCase() === codiceCorretto.toUpperCase()) {
+      feedback.textContent = "Codice corretto! Scarica il beat qui sotto.";
+      feedback.style.color = "#15af15";
+      downloadBtn.style.display = "inline-block";
+    } else {
+      feedback.textContent = "Codice errato, riprova!";
+      feedback.style.color = "#e74c3c";
+      downloadBtn.style.display = "none";
+    }
+  });
+
+  // Gestione selezione carte
+  document.querySelectorAll('.card-item').forEach(card => {
+    card.addEventListener('click', function(e) {
+      // Ferma la propagazione per evitare il click sul documento
+      e.stopPropagation();
+      if (this.classList.contains('selected')) {
+        window.location.href = this.getAttribute('data-url');
+      } else {
+        document.querySelectorAll('.card-item.selected').forEach(el => el.classList.remove('selected'));
+        this.classList.add('selected');
+      }
+    });
+  });
+
+  // Gestione click fuori dalla griglia: deseleziona tutte le carte
+  document.addEventListener('click', function(e) {
+    const grid = document.querySelector('.cards-grid');
+    if (grid && !grid.contains(e.target)) {
+      document.querySelectorAll('.card-item.selected').forEach(el => el.classList.remove('selected'));
+    }
+  });
+
+
+  
+  </script>
+</body>
+</html>
