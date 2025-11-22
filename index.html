@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home – Codice Magno</title>
+
+  <style>
+/* --- User-provided CSS (kept and used as reference) --- */
+.bg-mattoni {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image:
+  linear-gradient(to bottom, #1d1a16 0%, rgba(29, 26, 22, 0) 20%, rgba(29, 26, 22, 0) 80%, #1d1a16 100%),
+  url("sfondo nuovo.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: #1d1a16;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenuto {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.logo {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  margin-top: -2rem;
+  filter: drop-shadow(0 0 20px #a6422675);
+}
+
+
+.carta {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* --- Homepage specific: card container and card block --- */
+#container-carte {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px 0 60px 0;
+  max-width: 350px;
+}
+
+.carta-section {
+  background: #1d1a16b2;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.carta-section:hover { transform: translateY(-6px); }
+
+.carta-title {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.6px;
+  color: #e6e6e6;
+  font-weight: 700;
+}
+
+/* make sure the fixed bg stays behind content */
+body > .bg-mattoni { z-index: 0 }
+body > .contenuto { z-index: 1 }
+
+/* responsive tweaks */
+@media (max-width: 540px) {
+  .logo { margin-top: 0.5rem; width: 540px }
+  #container-carte { padding: 10px 0 40px 0; gap: 14px }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-mattoni" aria-hidden="true"></div>
+
+  <div class="contenuto">
+
+    <img src="logo.webp" class="logo" alt="Logo">
+
+    <div id="container-carte" aria-live="polite"></div>
+
+  </div>
+
+  <script>
+    const links = [
+      "https://its-me-dg.github.io/01%20Charhazard/",
+      "https://its-me-dg.github.io/02%20Weedzing/",
+      "https://its-me-dg.github.io/03%20LSDuck/",
+      "https://its-me-dg.github.io/04%20Splifftry/",
+      "https://its-me-dg.github.io/05%20Rapdos/",
+      "https://its-me-dg.github.io/06%20Hitmonlean/",
+      "https://its-me-dg.github.io/07%20Absinthe/",
+      "https://its-me-dg.github.io/08%20Aggrow/",
+      "https://its-me-dg.github.io/09%20Grimevoir/",
+      "https://its-me-dg.github.io/10%20Rayqwassup/"
+    ];
+
+    const container = document.getElementById('container-carte');
+
+    for (let i = 1; i <= 10; i++) {
+      const num = String(i).padStart(2, '0');
+
+      const a = document.createElement('a');
+      a.className = 'carta-section';
+      a.href = links[i-1] || '#';
+      a.setAttribute('role','link');
+
+      a.innerHTML = `
+        <div class="carta-title">Card ${num}</div>
+        <img class="carta" src="img/Card${num}.webp" alt="Card ${num}" loading="lazy" />
+      `;
+
+      container.appendChild(a);
+    }
+  </script>
+
+</body>
+</html>
