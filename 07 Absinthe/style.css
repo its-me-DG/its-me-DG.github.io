@@ -50,13 +50,15 @@ html, body {
   box-sizing: border-box;
 }
 
+
 .logo {
   width: 400px;
   max-width: 80%;
   height: auto;
-  margin-top: -1rem;
+  margin-top: -2rem;
   filter: drop-shadow(0 0 var(--spazio) var(--colore1));
 }
+
 
 .carta {
   width: 350px;
@@ -67,20 +69,20 @@ html, body {
   border-radius: 8px;
 }
 
+
 .audio-section {
   background: #1d1a16b2;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 0px var(--spazio) var(--colore1);
   max-width: 350px;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 10px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   backdrop-filter: blur(2.5px);
   border: 1.5px solid var(--colore2);
 }
-
 .audio-player {
   max-width: 600px;
   margin: -0rem auto;
@@ -88,7 +90,6 @@ html, body {
   font-family: sans-serif;
   text-align: center;
 }
-
 .audio-btns {
   display: flex;
   gap: 10px;
@@ -97,37 +98,32 @@ html, body {
   width: 100%;
   margin-top: 8px;
 }
-
 .audio-btns > * {
   width: 50%;
 }
-
 .audio-btns .big-booking-btn {
   flex: 1 1 0;
   max-width: none;
-  width: auto;
+  width: 100%;
   padding: 14px 0;
   font-size: 1.6rem;
   margin: 0;
   text-align: center;
   white-space: normal;
 }
-
 .audio-btns .beatstars-btn {
   background: linear-gradient(90deg, #ff5147 60%, #c12421 100%);
   color: #fff;
-  font-size: 0.90rem;
+  font-size: 0.80rem;
   border: 2px solid #ff5147;
-  box-shadow: 0 3px 14px #ffa34788, 0 1px 4px #0003;
+  box-shadow: 0 0px 2px #ffa34788, 0 0px 0px #0003;
   transition: background 0.15s, color 0.14s, box-shadow 0.13s, transform 0.12s;
 }
-
 .audio-btns .beatstars-btn:active {
   background: #c12421;
   color: #fff;
   transform: scale(0.97);
 }
-
 #playPauseBtn.playing {
   background: var(--colore4);
   color: var(--coloretext2);
@@ -136,187 +132,6 @@ html, body {
   background: var(--colore3);
   color: var(--coloretext2);
   transform: scale(0.98);
-}
-
-#waveform {
-  width: 100%;
-  max-width: 350px;
-  height: 70px;
-  margin-top: 10px;
-  margin-bottom: 24px;
-  border-radius: 10px;
-  box-shadow: 0 0px var(--spazio) var(--colore1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#waveform > * {
-  width: 350px !important;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-.download-section {
-  background: #1d1a16b2;
-  border-radius: 20px;
-  padding: 24px 24px 24px 24px;
-  box-shadow: 0 0px var(--spazio) var(--colore1);
-  max-width: 350px;
-  margin: 10px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(2.5px);
-  border: 1.5px solid var(--colore2);
-}
-.download-section h2 {
-  color: var(--coloretext1);
-  font-size: 2rem;
-  margin-bottom: 10px;
-  margin-top: 0;
-  letter-spacing: 0.04em;
-  text-align: center;
-  font-weight: bold;
-}
-.download-section p {
-  color: #fff8;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.download-section input,
-.download-section button,
-.download-section a {
-  font-family: inherit;
-}
-
-.download-section .input-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 10px;
-  width: 100%;
-  justify-content: center;
-}
-
-.download-section input[type="text"] {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1.5px solid var(--colore2);
-  font-size: 1.1rem;
-  background: #222;
-  color: var(--coloretext2);
-  width: 175px;
-  box-sizing: border-box;
-  height: 46px;
-  outline: none;
-  transition: border 0.14s, box-shadow 0.14s;
-  box-shadow: 0 2px 18px var(--colore1), 0 1px 8px #0005;
-}
-.download-section input[type="text"]:focus {
-  border: 1.5px solid var(--colore12);
-  box-shadow: 0 0 0 2px var(--colore1);
-}
-
-.download-section button {
-  padding: 0 18px;
-  border-radius: 8px;
-  border: 1.5px solid var(--colore2);
-  font-size: 1.1rem;
-  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
-  color: var(--coloretext2);
-  box-shadow: 0 2px 18px var(--colore1), 0 1px 8px #0005;
-  font-weight: bold;
-  height: 46px;
-  min-width: 110px;
-  cursor: pointer;
-  transition: background 0.14s, color 0.14s, border 0.13s;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.info-section {
-  background: #1d1a16b2;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 0px var(--spazio) var(--colore1);
-  max-width: 350px;
-  margin: 10px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(2.5px);
-  border: 1.5px solid var(--colore2);
-}
-
-.info-section h2 {
-  color: var(--coloretext1);
-  font-size: 2rem;
-  margin-bottom: 0.1rempx;
-  margin-top: 0;
-  letter-spacing: 0.04em;
-  text-align: center;
-  font-weight: bold;
-}
-
-
-.download-disclaimer {
-  color: #fff9;
-  font-size: 1.10rem;
-  text-align: center;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  line-height: 1.6;
-  font-family: inherit;
-  letter-spacing: 0.01em;
-}
-
-.highlight-offerta {
-  background: linear-gradient(90deg, #ffbf6bd6 50%, #e39e43d6 100%);
-  color: #1d1a16;
-  font-weight: bold;
-  border-radius: 6px;
-  font-size: 1.09em;
-  padding: 0 5px;
-  box-shadow: 0 1px 6px #ffe26444;
-  display: inline-block;
-  margin-left: 3px;
-  margin-right: 3px;
-  transition: background 0.18s, color 0.14s;
-}
-
-
-.download-section button:active {
-  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);;
-}
-
-.booking-section {
-  background: #1d1a16b2;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 0px var(--spazio) var(--colore1);
-  max-width: 350px;
-  margin: 10px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(2.5px);
-  border: 1.5px solid var(--colore2);
-}
-.booking-section h2 {
-  color: var(--coloretext1);
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 18px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  font-weight: bold;
 }
 .big-booking-btn {
   display: block;
@@ -331,12 +146,402 @@ html, body {
   font-size: 1.16rem;
   text-align: center;
   border: 2px solid var(--colore2);
-  box-shadow: 0 2px 18px var(--colore1), 0 1px 8px #0005;
+  box-shadow: 0 px 0px var(--colore1), 0 1px 0px #0005;
   text-decoration: none;
   transition: background 0.15s, color 0.14s, box-shadow 0.13s, transform 0.12s;
   cursor: pointer;
 }
-.big-booking-btn:active {
+
+
+#waveform {
+  width: 110%;
+  max-width: 350px;
+  height: 80px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#waveform > * {
+  width: 350px !important;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.download-section {
+  background: #1d1a16b2;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+}
+.download-section h2 {
+  color: var(--coloretext1);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-weight: bold;
+}
+.download-section p {
+  color: #fff8;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+.download-section input,
+.download-section button,
+.download-section a {
+  font-family: inherit;
+}
+.download-section .input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  justify-content: center;
+}
+.download-section input[type="text"] {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--colore2);
+  font-size: 1.1rem;
+  background: #222;
+  color: var(--colore3);
+  width: 175px;
+  box-sizing: border-box;
+  height: 46px;
+  outline: none;
+  transition: border 0.14s, box-shadow 0.14s;
+}
+.download-section input[type="text"]:focus {
+  border: 1.5px solid var(--colore1);
+  box-shadow: 0 0 0 2px var(--colore1);
+}
+.download-section button {
+  padding: 0 18px;
+  border-radius: 8px;
+  border: 1.5px solid var(--colore2);
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
+  color: var(--coloretext2);
+  font-weight: bold;
+  height: 46px;
+  min-width: 110px;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s, border 0.13s;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-section button:active {
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
+}
+
+.pro-gift-section {
+  background: #1d1a16b2; /* stesso stile delle altre sezioni */
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  max-width: 350px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+}
+
+.pro-gift-section h2 {
+  color: var(--coloretext1);
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pro-gift-text {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+/* Sezione Licenze */
+.licenze-section {
+  background: #1d1a16b2;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  max-width: 350px;
+  width: 100%; 
+  margin: 10px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+}
+
+.licenze-section h2 {
+  color: var(--coloretext1);
+  font-size: 2rem;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.licenze-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.licenza-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #2a261e88;
+}
+
+.licenza-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.licenza-prezzo {
+  color: #fff;
+  text-align: right;
+}
+
+.licenza-prezzo s {
+  color: #e74c3c;
+  margin-right: 6px;
+}
+
+.licenza-prezzo .highlight-offerta {
+  background: linear-gradient(90deg, #ffbf6bd6 50%, #e39e43d6 100%);
+  color: #1d1a16;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 0.95em;
+  padding: 0 4px;
+  box-shadow: 0 1px 6px #ffe26444;
+  display: inline-block;
+}
+
+/* ===== Sezione Calendario ===== */
+.calendar-section {
+  background: #1d1a16b2;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0px 10px var(--colore1);
+  max-width: 350px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+}
+
+.calendar-section h2 {
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Wrapper scrollabile */
+.calendar-months-wrapper,
+.calendar-weeks-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  gap: 12px;
+  padding: 8px 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* Nascondo scroll bar su Webkit */
+.calendar-months-wrapper::-webkit-scrollbar,
+.calendar-weeks-wrapper::-webkit-scrollbar,
+.calendar-days-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Singolo elemento swipeabile */
+.calendar-month,
+.calendar-week {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #222;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+/* Stato selezionato */
+.calendar-month.selected,
+.calendar-week.selected {
+  padding-right: 12px;
+  background: var(--colore3);
+  color: #fff;
+  transform: scale(1.1);
+  scroll-margin: 16px;
+}
+
+/* Wrapper esterno per padding senza scrollbar */
+#calendar-days-container-wrapper {
+  padding: 0px 0px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Container interno scrollabile */
+#calendar-days-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  padding: 10px 20px 0px 20px;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Nascondi scrollbar WebKit */
+#calendar-days-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Colonna singolo giorno migliorata per entrambi i contenitori */
+.calendar-day-column {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background: #222;
+  border-radius: 12px;
+  padding: auto 1px;
+  margin: 32px 0;
+  color: #fff;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+  max-height: 200px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
+  position: relative;
+  z-index: 0;
+}
+
+/* Giorno centrale evidenziato */
+.calendar-day-column.selected {
+  transform: scale(1.25);
+  opacity: 1;
+  z-index: 2;
+  background: #ef4b30;
+  box-shadow: 0 8px 20px rgba(239, 75, 48, 0.8);
+}
+
+/* Giorni adiacenti */
+.calendar-day-column.adjacent {
+  transform: scale(0.9);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Titolo del giorno */
+.day-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Lista degli slot */
+.slot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Singolo slot */
+.slot {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #333;
+  color: #ccc;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Slot libero */
+.slot.free {
+  background: #000000;
+  color: #000000;
+}
+
+/* Slot occupato */
+.slot.occupied {
+  background: #6f2a2a;
+  color: #f7d4d4;
+  text-decoration: line-through;
+}
+
+
+/* ===== Pulsante Prenota/Mettiti in coda centrato e grande ===== */
+#prenotaBtn {
+  display: block;
+  width: 100%;
+  max-width: 250px; /* grandezza simile a pulsante Scopri */
+  margin: 10px auto 0px;
+  padding: 15px 0;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
+  color: var(--coloretext2);
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 2px solid var(--colore2);
+  box-shadow: 0px 0px var(--colore1), 0 1px 0px #0005;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.14s, box-shadow 0.13s, transform 0.12s;
+}
+
+#prenotaBtn:active {
   background: var(--colore3);
   color: #000;
   transform: scale(0.98);
@@ -349,7 +554,7 @@ html, body {
   box-shadow: 0 0px var(--spazio) var(--colore1);
   max-width: 350px;
   width: 100%;
-  margin: 10px auto 0 auto;
+  margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -395,13 +600,14 @@ html, body {
   z-index: 2;
 }
 
+
 .studio-section {
   background: #1d1a16b2;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 0px var(--spazio) var(--colore1);
   max-width: 350px;
-  margin: 30px auto 50px auto;
+  margin: 30px auto 10px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -417,3 +623,275 @@ html, body {
   text-align: center;
   font-weight: bold;
 }
+
+
+
+/* ===== Dettagli Licenze (espansione) ===== */
+.licenza-details {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  background: rgba(34, 30, 26, 0.85);
+  border: 1px solid var(--colore2);
+  border-radius: 10px;
+  padding: 0 14px;
+  color: #fff;
+  box-shadow: 0 0 8px var(--colore1);
+}
+
+.licenza-details ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.licenza-details li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.licenza-details.active {
+  display: block;
+  opacity: 1;
+  margin-top: 6px;
+}
+
+
+/* ===== Messaggi e pulsante Free Download (visibilità condizionata) ===== */
+.download-feedback {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  padding: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease, padding 0.25s ease;
+}
+
+.download-feedback.active {
+  display: block;
+  max-height: 90px; /* o regolare secondo necessità */
+  opacity: 1;
+  margin-top: 2px;
+  padding: 1px 0;
+}
+
+
+/* ===== Pulsante Scarica il beat stile identico a Sblocca, centrato sulla finestra ===== */
+#downloadBeatBtn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: 1.5px solid var(--colore2) !important;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%) !important;
+  color: var(--coloretext2);
+  font-weight: bold;
+  height: 46px;
+  min-width: 110px;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s, border 0.13s, transform 0.12s;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 6px 0 0 0; /* solo margine verticale */
+  text-align: center;
+}
+#downloadBeatBtn:active {
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
+  transform: translateX(-50%) scale(0.98);
+}
+
+#calendar-warning {
+  font-size: 1rem;
+  color: #e74c3c;
+  margin-top: 10px;
+  text-align: center;
+  display: none; /* nascosto di default, visibile via JS */
+}
+
+/* Form raccolta dati prenotazione */
+#calendar-form-container {
+  width: 100%;
+  max-width: 320px;
+  background: #222222dd;
+  border: 1.5px solid var(--colore2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 20px;
+  display: none; /* nascosto di default, visibile via JS */
+  box-shadow: 0 0 10px var(--colore1);
+  backdrop-filter: blur(3px);
+}
+
+#calendar-form-container h3 {
+  font-size: 1.2rem;
+  color: var(--coloretext1);
+  margin-bottom: 15px;
+  text-align: center;
+
+}
+
+#calendar-form-container form div {
+  margin-bottom: 8px; /* spazio tra un campo e il successivo */
+  display: flex;
+  flex-direction: column;
+}
+
+#calendar-form-container form label {
+  font-size: 0.95rem;
+  color: #fff8;
+  margin-bottom: -10px; /* pochissimo spazio tra label e input */
+}
+
+#calendar-form-container form input {
+  padding: 8px 0px ;
+  border-radius: 8px;
+  border: 1.5px solid var(--colore2);
+  background: #111;
+  color: var(--colore3);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.15s, box-shadow 0.15s;
+  text-align: center;
+}
+
+#calendar-form-container form input:focus {
+  border: 1.5px solid var(--colore1);
+  box-shadow: 0 0 6px var(--colore1);
+}
+
+#calendar-form-container form button {
+  margin-top: 20px;
+  padding: 16px 0;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--colore3) 70%, var(--colore4) 100%);
+  color: var(--coloretext2);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid var(--colore2);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s;
+}
+
+#calendar-form-container form button:active {
+  background: var(--colore3);
+  transform: scale(0.97);
+}
+
+.licenza-name {
+  position: relative;
+}
+
+.licenza-name .info-icon {
+  font-size: 0.75rem;
+  color: #bfbfbf;
+  margin-left: 6px;
+  position: relative;
+  top: -4px;
+  opacity: 0.8;
+}
+
+/* ===== Sezione Contatti ===== */
+.contatti-section {
+  background: #1d1a16b2;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0px var(--spazio) var(--colore1);
+  max-width: 350px;
+  width: 100%;
+  margin: 0px auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.5px);
+  border: 1.5px solid var(--colore2);
+}
+
+.contatti-section h2 {
+  color: var(--coloretext1);
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contatti-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 12px;
+}
+
+/* Pulsanti generici */
+.contatto-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 12px;
+  min-height: 55px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border: 1.5px solid #00000044;
+  box-shadow: 0 0 6px #00000055;
+  transition: transform 0.12s, filter 0.15s;
+}
+
+.contatto-btn:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+/* WhatsApp */
+.contatto-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+/* Instagram con sfumatura */
+.contatto-instagram {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: #fff;
+}
+
+/* YouTube */
+.contatto-youtube {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* Mail */
+
+/* BeatStars */
+.contatto-beatstars {
+  background: linear-gradient(90deg, #ff5147 60%, #c12421 100%);
+  color: #fff;
+}
+
+/* Pulsante Maps / larghezza piena */
+.contatto-full {
+  grid-column: 1 / -1; /* occupa tutta la riga della griglia */
+}
+
+/* Colore pulsante Maps / Google Maps style */
+.contatto-maps {
+  background: #4285F4; /* blu Google */
+  color: #fff;
+}
+.contatto-btn svg {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  fill: #fff;
+}
+
