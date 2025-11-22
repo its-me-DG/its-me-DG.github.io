@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Landing Page</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Includi WaveSurfer.js -->
   <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="JS MAGNO.js" defer></script>
 </head>
 
-
-
-
-
 <body>
-
   <div class="bg-mattoni"></div>
 
   <div class="contenuto">
@@ -37,181 +31,205 @@
     </div>
 
 
-
     <div class="download-section">
-      <h2>Free Download</h2>
-      <p>Inserisci il codice che trovi in basso sulla carta per sbloccare il download:</p>
-      <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-        <input id="codiceBeat" type="text" placeholder="Inserisci codice" maxlength="12" autocomplete="off">
-        <button id="verificaCodiceBtn">Sblocca</button>
-      </div>
-      <div id="codiceFeedback" style="color: #e74c3c; min-height: 22px; margin-bottom: 10px;"></div>
-      <a id="downloadBeatBtn" href="https://www.beatstars.com/tuo-beat" target="_blank" style="display:none; padding: 12px 32px; border-radius: 12px; background: var(--colore3); color: var(--coloretext2); font-weight: bold; text-decoration: none;">Scarica il beat</a>
+    <h2>Free Download</h2>
+    <p>Inserisci il codice che trovi in basso sulla carta per sbloccare il download:</p>
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+      <input id="codiceBeat" type="text" placeholder="Inserisci codice" maxlength="12" autocomplete="off">
+      <button id="verificaCodiceBtn">Sblocca</button>
     </div>
+    <div class="download-feedback">
+      <div id="codiceFeedback" style="color: #e74c3c; min-height: 22px;"></div>
+      <a id="downloadBeatBtn" target="_blank" style="display:none; padding: 12px 32px; border-radius: 12px; background: var(--colore3); color: var(--coloretext2); font-weight: bold; text-decoration: none;">
+        Scarica il beat
+      </a>
+    </div>
+  </div>
 
-    <div class="info-section">
-      <h2>Nota bene</h2>
-      <p class="download-disclaimer">
-        Anche se non sempre te lo dicono esplicitamente, tutti i beat in free download che trovi su internet posso essere usati per registrare e fare prove, ma non possono essere pubblicati o impongono molte limitazioni al numero di stream che puoi raggiungere.<br>
-        Per pubblicare o monetizzare serve comprare una licenza (base a 34.95€)
-        <span class="highlight-offerta">Se registri da me te la regalo!</span>
+  <div id="hx2f" 
+       data-b64pwd="UE9LRU1PTjM1"  
+       data-b64url="aHR0cHM6Ly93d3cuYXBwbGUuY29tL2l0Lw=="
+       style="display:none">
+  </div>
+
+      <!-- Sezione regalo Licenza PRO -->
+    <div class="pro-gift-section">
+      <h2>🎁 Bonus Gift 🎁</h2>
+      <p class="pro-gift-text">
+        Se registri da me, ricevi <strong>la licenza PRO gratis</strong>!
       </p>
     </div>
 
-    <div class="booking-section">
-      <h2>Clicca per prenotare una sessione</h2>
-      <a href="https://wa.me/393468128888?text=Ciao,%20voglio%20prenotare%20una%20sessione%20in%20studio!"
-        target="_blank" class="big-booking-btn">
-        Prenota
-      </a>
+    <!-- Sezione Licenze -->
+    <div class="licenze-section">
+      <h2>Le mie licenze</h2>
+      <div class="licenze-table">
+        <div class="licenza-row">
+          <div class="licenza-name">BASE<span class="info-icon" title="Informazioni sulla licenza">ⓘ</span></div>
+          <div class="licenza-prezzo"><s>19.95€</s> <span class="highlight-offerta">Gratis con questa carta</span></div>
+        </div>
+        <div class="licenza-details">
+          <ul>
+            <li>Formato MP3</li>
+            <li>Fino a 10.000 stream</li>
+            <li>Non monetizzabile</li>
+          </ul>
+        </div>
+        <div class="licenza-row">
+          <div class="licenza-name">PRO<span class="info-icon" title="Informazioni sulla licenza">ⓘ</span></div>
+          <div class="licenza-prezzo"><s>59.95€</s> <span class="highlight-offerta">Gratis se registri da me</span></div>
+        </div>
+        <div class="licenza-details">
+          <ul>
+            <li>Formato MP3 e WAV</li>
+            <li>Stream illimitati</li>
+            <li>Non monetizzabile</li>
+          </ul>
+        </div>
+        <div class="licenza-row">
+          <div class="licenza-name">UNLIMITED<span class="info-icon" title="Informazioni sulla licenza">ⓘ</span></div>
+          <div class="licenza-prezzo">89.95€</div>
+        </div>
+        <div class="licenza-details">
+          <ul>
+            <li>Formato MP3, WAV e STEM files</li>
+            <li>Stream illimitati</li>
+            <li>Monetizzabile, uso commerciale totale </li>
+          </ul>
+        </div>
+        <div class="licenza-row">
+          <div class="licenza-name">EXCLUSIVE<span class="info-icon" title="Informazioni sulla licenza">ⓘ</span></div>
+          <div class="licenza-prezzo">249.95€</div>
+        </div>
+        <div class="licenza-details">
+          <ul>
+            <li>Formato MP3, WAV e STEM files</li>
+            <li>Stream illimitati e uso commerciale totale</li>
+            <li>Traccia rimossa dal catalogo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking con Calendario -->
+    <div class="calendar-section">
+      <h2>Seleziona una data per prenotare</h2>
+
+      <!-- Wrapper mesi -->
+      <div class="calendar-months-wrapper"></div>
+
+      <!-- Wrapper settimane -->
+      <div class="calendar-weeks-wrapper"></div>
+      <div id="calendar-days-container"></div>
+
+      <button id="prenotaBtn" class="big-booking-btn">Prenota</button>
+
+      <!-- Messaggio di warning -->
+      <div id="calendar-warning" style="color: #e74c3c; margin-top: 10px; display: none;">
+        Devi prima selezionare uno slot orario
+      </div>
+
+      <!-- Form raccolta dati -->
+      <div id="calendar-form-container" style="margin-top: 20px; display: none;">
+        <h3>Compila i tuoi dati per confermare la prenotazione</h3>
+        <form id="calendarForm">
+          <div style="margin-bottom: 10px;">
+            <label for="nomeCognome">Nome e Cognome:</label><br>
+            <input type="text" id="nomeCognome" name="nomeCognome" required>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="email">Numero di telefono:</label><br>
+            <input type="tel" id="telefono" name="email" required>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="emailUtente">Email:</label><br>
+            <input type="email" id="emailUtente" name="emailUtente" required>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="slotSelezionato">Slot selezionato:</label><br>
+            <input type="text" id="slotSelezionato" name="slotSelezionato" readonly>
+          </div>
+          <button type="submit" class="big-booking-btn">Conferma Prenotazione</button>
+        </form>
+      </div>
     </div>
 
     <div class="cards-section">
       <h2>Scopri le altre carte</h2>
       <div class="cards-grid">
         <div class="card-item" data-url="landing-card01.html">
-          <img src="img/card01.webp" alt="Card 01">
+          <img src="img/Card01.webp" alt="Card 01">
         </div>
         <div class="card-item" data-url="landing-card02.html">
-          <img src="img/card02.webp" alt="Card 02">
+          <img src="img/Card02.webp" alt="Card 02">
         </div>
         <div class="card-item" data-url="landing-card03.html">
-          <img src="img/card03.webp" alt="Card 03">
+          <img src="img/Card03.webp" alt="Card 03">
         </div>
         <div class="card-item" data-url="landing-card04.html">
-          <img src="img/card04.webp" alt="Card 04">
+          <img src="img/Card04.webp" alt="Card 04">
         </div>
         <div class="card-item" data-url="landing-card05.html">
-          <img src="img/card05.webp" alt="Card 05">
+          <img src="img/Card05.webp" alt="Card 05">
         </div>
         <div class="card-item" data-url="landing-card06.html">
-          <img src="img/card06.webp" alt="Card 06">
+          <img src="img/Card06.webp" alt="Card 06">
         </div>
         <div class="card-item" data-url="landing-card07.html">
-          <img src="img/card07.webp" alt="Card 07">
+          <img src="img/Card07.webp" alt="Card 07">
         </div>
         <div class="card-item" data-url="landing-card08.html">
-          <img src="img/card09.webp" alt="Card 08">
+          <img src="img/Card09.webp" alt="Card 08">
         </div>
         <div class="card-item" data-url="landing-card09.html">
-          <img src="img/card10.webp" alt="Card 09">
+          <img src="img/Card10.webp" alt="Card 09">
         </div>
       </div>
     </div>
 
-  <div class="studio-section">
+      <div class="studio-section">
     <h2>Clicca qui per vedere lo studio</h2>
     <a href="pagina-studio.html" class="big-booking-btn">
       Scopri
     </a>
   </div>
- 
 
-  
+    <!-- Sezione Contatti con SVG -->
+    <div class="contatti-section">
+      <h2>Contatti</h2>
+      <div class="contatti-grid">
+        <a href="https://wa.me/" target="_blank" class="contatto-btn contatto-whatsapp" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.67-1.611-.916-2.204-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.26.488 1.69.624.71.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.174-1.414-.074-.123-.273-.198-.57-.347z"/>
+          </svg>
+          Whatsapp
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="contatto-btn contatto-instagram" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 448 512" preserveAspectRatio="xMidYMid meet">
+            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9 0 63.6 51.3 114.9 114.9 114.9s114.9-51.3 114.9-114.9c0-63.6-51.3-114.9-114.9-114.9zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.5-26.3-26.3-57.8-34.5-93.5-36.2-36.9-2.1-147.7-2.1-184.6 0-35.7 1.7-67.3 9.9-93.5 36.2-26.3 26.3-34.5 57.8-36.2 93.5-2.1 36.9-2.1 147.7 0 184.6 1.7 35.7 9.9 67.3 36.2 93.5 26.3 26.3 57.8 34.5 93.5 36.2 36.9 2.1 147.7 2.1 184.6 0 35.7-1.7 67.3-9.9 93.5-36.2 26.3-26.3 34.5-57.8 36.2-93.5 2.1-36.9 2.1-147.7 0-184.6zm-48.5 224.5c-7.8 19.5-23 34.7-42.5 42.5-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.5-7.8-34.7-23-42.5-42.5-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.5 23-34.7 42.5-42.5 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.5 7.8 34.7 23 42.5 42.5 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" class="contatto-btn contatto-youtube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 576 512">
+            <path fill="#fff" d="M549.655 124.083c-6.281-23.65-24.787-42.243-48.284-48.566C458.792 64 288 64 288 64S117.208 64 74.629 75.517c-23.497 6.323-42.003 24.916-48.284 48.566-11.412 42.867-11.412 132.312-11.412 132.312s0 89.445 11.412 132.312c6.281 23.65 24.787 42.243 48.284 48.566C117.208 448 288 448 288 448s170.792 0 213.371-11.517c23.497-6.323 42.003-24.916 48.284-48.566 11.412-42.867 11.412-132.312 11.412-132.312s0-89.445-11.412-132.312zM231.81 334.061V177.939l142.739 78.061-142.739 78.061z"/>
+          </svg>
+          YouTube
+        </a>
+        <a href="https://www.beatstars.com/itsmedg" target="_blank" class="contatto-btn contatto-beatstars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-5h2v5zm4 0h-2v-3h2v3z"/>
+          </svg>
+          BeatStars
+        </a>
+        <a href="#" class="contatto-btn contatto-maps contatto-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 384 512">
+            <path fill="#fff" d="M168 0C75.1 0 0 75.1 0 168c0 87.3 168 344 168 344s168-256.7 168-344c0-92.9-75.1-168-168-168zm0 256c-48.5 0-88-39.5-88-88s39.5-88 88-88 88 39.5 88 88-39.5 88-88 88z"></path>
+          </svg>
+          Indirizzo
+        </a>
+      </div>
+    </div>
 
-
-
-
-  <script>
-
-    const wavesurfer = WaveSurfer.create({
-      container: '#waveform',
-      waveColor: '#FFF',
-      progressColor: '#888',
-      height: 70,
-      normalize: true,
-      responsive: true,
-    });
-
-    wavesurfer.load('beat.mp3');
-
-    const playPauseBtn = document.getElementById('playPauseBtn');
-
-    playPauseBtn.classList.add('paused');
-    playPauseBtn.textContent = 'Play';
-
-    playPauseBtn.addEventListener('click', () => {
-      wavesurfer.playPause();
-      const isPlaying = wavesurfer.isPlaying();
-      playPauseBtn.textContent = isPlaying ? 'Pause' : 'Play';
-      playPauseBtn.classList.toggle('playing', isPlaying);
-      playPauseBtn.classList.toggle('paused', !isPlaying);
-    });
-
-    wavesurfer.on('finish', () => {
-      playPauseBtn.textContent = 'Play';
-      playPauseBtn.classList.remove('playing');
-      playPauseBtn.classList.add('paused');
-    });
-
-    const waveform = document.getElementById('waveform');
-
-    let isDragging = false;
-
-    waveform.addEventListener('touchstart', (e) => {
-      isDragging = true;
-    });
-
-    waveform.addEventListener('touchmove', function(e) {
-      if (isDragging) {
-        e.preventDefault();
-        
-        const touch = e.touches[0];
-        const rect = waveform.getBoundingClientRect();
-        const x = touch.clientX - rect.left;
-
-        const percent = Math.max(0, Math.min(1, x / rect.width));
-        wavesurfer.seekTo(percent);
-      }
-    }, { passive: false }); // IMPORTANTE: passive:false per poter chiamare preventDefault
-
-    waveform.addEventListener('touchend', (e) => {
-      isDragging = false;
-    });
-
-  const codiceCorretto = "POKEMON35"; // Cambia col tuo vero codice!
-  const verificaBtn = document.getElementById('verificaCodiceBtn');
-  const codiceInput = document.getElementById('codiceBeat');
-  const feedback = document.getElementById('codiceFeedback');
-  const downloadBtn = document.getElementById('downloadBeatBtn');
-
-  verificaBtn.addEventListener('click', function() {
-    const inserito = codiceInput.value.trim();
-    if (inserito.toUpperCase() === codiceCorretto.toUpperCase()) {
-      feedback.textContent = "Codice corretto! Scarica il beat qui sotto.";
-      feedback.style.color = "#15af15";
-      downloadBtn.style.display = "inline-block";
-    } else {
-      feedback.textContent = "Codice errato, riprova!";
-      feedback.style.color = "#e74c3c";
-      downloadBtn.style.display = "none";
-    }
-  });
-
-  // Gestione selezione carte
-  document.querySelectorAll('.card-item').forEach(card => {
-    card.addEventListener('click', function(e) {
-      // Ferma la propagazione per evitare il click sul documento
-      e.stopPropagation();
-      if (this.classList.contains('selected')) {
-        window.location.href = this.getAttribute('data-url');
-      } else {
-        document.querySelectorAll('.card-item.selected').forEach(el => el.classList.remove('selected'));
-        this.classList.add('selected');
-      }
-    });
-  });
-
-  // Gestione click fuori dalla griglia: deseleziona tutte le carte
-  document.addEventListener('click', function(e) {
-    const grid = document.querySelector('.cards-grid');
-    if (grid && !grid.contains(e.target)) {
-      document.querySelectorAll('.card-item.selected').forEach(el => el.classList.remove('selected'));
-    }
-  });
-
-
-  
-  </script>
 </body>
 </html>
